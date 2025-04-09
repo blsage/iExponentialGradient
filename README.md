@@ -1,4 +1,4 @@
-# iExponentialGradient
+# UnionGradeints
 
 A SwiftUI extension that provides exponential gradients for more natural-looking color transitions.
 
@@ -19,7 +19,7 @@ Add the package dependency to your Package.swift file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/blsage/iExponentialGradient.git", from: "1.0.0")
+    .package(url: "https://github.com/unionst/union-gradients.git", from: "1.0.0")
 ]
 ```
 
@@ -29,7 +29,7 @@ Or add it directly in Xcode using File > Add Packages...
 
 ```swift
 import SwiftUI
-import iExponentialGradient
+import UnionGradeints
 
 struct ContentView: View {
     var body: some View {
@@ -65,23 +65,6 @@ struct ContentView: View {
         .frame(width: 300, height: 200)
     }
 }
-```
-
-## ShapeStyle Support (iOS 17+)
-
-On iOS 17 and newer, ExponentialGradient can be used as a ShapeStyle:
-
-```swift
-Circle()
-    .fill(
-        ExponentialGradient(
-            colors: [.blue, .purple],
-            startPoint: .leading,
-            endPoint: .trailing,
-            exponent: 2.5
-        )
-    )
-    .frame(width: 200, height: 200)
 ```
 
 ## Parameters

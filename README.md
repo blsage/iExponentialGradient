@@ -4,12 +4,15 @@ A SwiftUI extension that provides exponential gradients for more natural-looking
 
 ## Overview
 
-Standard linear gradients use a constant rate of change between colors, which can sometimes appear flat or unnatural. iExponentialGradient applies an exponential function to create more visually interesting and dynamic gradients that can better mimic how light and color behave in the real world.
+Standard linear gradients use a constant rate of change between colors, which can sometimes appear flat or unnatural, especially against motion.
+`ExponentialGradient` applies an exponential function to create more softer gradients that can better mimic how light and color behave in the real world.
 
 ## Requirements
 
-- iOS 14.0+ / macOS 10.16+ / tvOS 14.0+ / watchOS 7.0+
-- Swift 6.0+
+- iOS 13.0+
+- macOS 10.15+
+- tvOS 14.3+
+- watchOS 6.0+
 
 ## Installation
 
@@ -33,34 +36,10 @@ import UnionGradeints
 
 struct ContentView: View {
     var body: some View {
-        // Basic usage with default exponent (2.0)
         ExponentialGradient(
             colors: [.blue, .purple],
             startPoint: .leading, 
             endPoint: .trailing
-        )
-        .frame(width: 300, height: 200)
-        
-        // Custom exponent for different curve steepness
-        ExponentialGradient(
-            colors: [.red, .orange, .yellow],
-            startPoint: .top,
-            endPoint: .bottom,
-            exponent: 3.5,
-            subdivisions: 64  // More subdivisions for smoother gradients
-        )
-        .frame(width: 300, height: 200)
-        
-        // Works with gradient stops for precise color positioning
-        ExponentialGradient(
-            stops: [
-                .init(color: .green, location: 0),
-                .init(color: .blue, location: 0.3),
-                .init(color: .purple, location: 1)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing,
-            exponent: 1.5
         )
         .frame(width: 300, height: 200)
     }
